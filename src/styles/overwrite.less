@@ -1,0 +1,80 @@
+@import "./config/color";
+
+.ant-form-item{
+  margin-bottom: 10px;
+}
+
+.ant-input-number{
+  width: 100%;
+}
+.cdn-select-component{
+  .ant-select{
+    width: 100%;
+  }
+}
+
+.cdn-row-odd{
+  .ant-table-cell:not(.customized){
+    background: @normal-fff-bg !important;
+  }
+
+  .ant-table-cell-fix-left, .ant-table-cell-fix-right{
+    background: @normal-fff-bg;
+  }
+
+  .ant-table-column-sort{
+    background: @normal-fff-bg;
+  }
+}
+.ant-table-thead > tr >th{
+  color:#000;
+  border-bottom: 2px solid #000;
+}
+.cdn-row-even{
+  .ant-table-cell:not(.customized){
+    background: @normal-bg !important;
+  }
+
+  .ant-table-cell-fix-left, .ant-table-cell-fix-right{
+    background: @normal-bg;
+  }
+
+  .ant-table-column-sort{
+    background: @normal-bg;
+  }
+}
+
+.ant-select{
+  width: 100%;
+}
+
+.ant-table-pagination.ant-pagination{
+  margin: 0;
+  padding: 16px 15px;
+  background: @normal-table-header-bg;
+}
+
+.ant-tabs-nav{
+  margin-bottom: 0 !important;
+  &:before{
+    display: none;
+  }
+}
+
+.ant-menu-dark .ant-menu-inline.ant-menu-sub{
+  background: unset;
+}
+
+.ant-upload.ant-upload-drag{
+  border-color: rgb(204, 204, 204);
+}
+
+.ant-tabs-large > .ant-tabs-nav .ant-tabs-tab{
+  padding:11px;
+}
+.ant-card-head{
+  border:0
+}
+.ant-card-body{
+  padding:0
+}

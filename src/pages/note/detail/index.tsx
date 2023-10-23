@@ -5,7 +5,7 @@ import ModifyDesign from "@/pages/note/detail/modify";
 import {useLoaderData, useNavigate, useParams} from "react-router-dom";
 import {scriptDelete} from "@/store/network";
 import useStore from "@/store/store";
-
+import Image from '@/assets/image.png'
 
 const Detail: FC = () => {
     const navigate = useNavigate()
@@ -42,7 +42,7 @@ const Detail: FC = () => {
                 <Button style={{marginLeft:20,color:"red"}} onClick={deleteDesign}>Delete Item</Button>
             </div>
             <section style={{display:"flex"}}>
-                <img style={{cursor:"pointer"}} alt="" src={image_url+data?.cover} height={200} onClick={goCover}/>
+                {data?.cover?<img style={{cursor:"pointer"}} alt="" src={image_url+data?.cover} height={200} onClick={goCover}/>:<img alt="" src={Image} style={{height:200}} onClick={goCover}/>}
                 <div style={{flex:1,marginLeft:20}}>
                     <Row style={{marginBottom:10}}>
                         <Col span={8} style={{fontWeight:550,color:"#9d692c"}}>剧本名</Col>
@@ -58,7 +58,7 @@ const Detail: FC = () => {
                     </Row>
                     <Row style={{marginBottom:10}}>
                         <Col span={8} style={{fontWeight:550,color:"#9d692c"}}>玩家人数</Col>
-                        <Col span={16}>{data?.playerNumber}</Col>
+                        <Col span={16}>{data?.playerMan}男{data?.playerWoman}女</Col>
                     </Row>
                     <Row style={{marginBottom:10}}>
                         <Col span={8} style={{fontWeight:550,color:"#9d692c"}}>创建时间</Col>

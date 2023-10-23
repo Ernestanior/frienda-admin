@@ -33,16 +33,19 @@ const ImgView: FC = () => {
     return (
         <section>
             <div style={{color:"#ee8d20",fontWeight:600,cursor:"pointer"}} onClick={onBack}><LeftOutlined />返回</div>
-            <section style={{display:"flex",flexWrap:"wrap",margin:"20px 0"}}>
-                <span style={{fontWeight:"550",fontSize:16}}>原封面：</span>
-                <div key={originCover} style={{width:200,marginRight:20,cursor:"pointer"}}>
+            <section style={{margin:20}}>
+                <div style={{fontWeight:"550",fontSize:16,marginBottom:10}}>原封面：</div>
+                {originCover?<div key={originCover} style={{width:200,marginRight:20,cursor:"pointer"}}>
                     <Image style={{width:"100%"}} src={image_url+originCover}
                            preview={{src: image_url+originCover}}/>
-                </div>
+                </div>:'暂无封面'}
             </section>
-            <span style={{fontWeight:"550",fontSize:16,marginBottom:20}}>新封面：</span>
-            <ImageUpload changePic={setImgList}></ImageUpload>
-            <Button style={{marginTop:20}} onClick={onSubmit}>确定</Button>
+            <section style={{margin:20,marginTop:30}}>
+                <div style={{fontWeight:"550",fontSize:16,marginBottom:10}}>新封面：</div>
+                <ImageUpload changePic={setImgList}></ImageUpload>
+            </section>
+
+            <Button style={{marginTop:20,marginLeft:20}} onClick={onSubmit}>确定</Button>
         </section>
     );
 };

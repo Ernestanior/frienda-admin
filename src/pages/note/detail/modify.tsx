@@ -30,7 +30,7 @@ const ModifyDesign:FC<IProps> = ({onOk,onClose,visible,data}) => {
     }
 
     useEffect(()=>{
-        data && form.setFieldsValue({...data,publishDate:moment(data.publishDate)})
+        data && form.setFieldsValue({...data,publishDate:moment(data.publishDate),type:data.type.split(',')})
     },[form,data,visible])
     return <Modal
         confirmLoading={loading}
@@ -61,8 +61,13 @@ const ModifyDesign:FC<IProps> = ({onOk,onClose,visible,data}) => {
             <FormItem name="duration" label='剧本时长'>
                 <InputNumber style={{width:"100%"}}/>
             </FormItem>
-            <FormItem name="playerNumber" label='玩家人数'>
-                <Input />
+            <FormItem label='玩家人数'>
+                <FormItem name="playerMan" label='男'>
+                    <InputNumber style={{width:"20%"}}/>
+                </FormItem>
+                <FormItem name="playerWoman" label='女'>
+                    <InputNumber style={{width:"20%"}}/>
+                </FormItem>
             </FormItem>
             <FormItem name="publishDate" label='发布日期' wrapperCol={{span:3}}>
                 <DatePicker style={{width:200}}/>

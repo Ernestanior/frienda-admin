@@ -2,8 +2,10 @@
 import axios from 'axios';
 import {notification} from "antd";
 
-export const image_url = 'http://43.134.172.92'
-export const init_url = 'http://43.134.172.92'
+// export const image_url = 'http://43.134.172.92'
+// export const init_url = 'http://43.134.172.92'
+export const init_url = 'https://api.friendasg.com'
+export const image_url = 'https://api.friendasg.com'
 // export const init_url = 'http://10.10.20.45:10000'
 
 const request = (option: any,signal=undefined,pass=false) => {
